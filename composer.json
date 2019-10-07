@@ -1,0 +1,33 @@
+{
+  "name": "alex.gemmell/workshop",
+  "description": "Basic CQRS and Event Sourced application in PHP for testing purposes",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Alex Gemmell",
+      "email": "agemmell@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Workshop\\": "src/"
+    },
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require": {
+    "eventsauce/eventsauce": "^0.7.0",
+    "eventsauce/doctrine-message-repository": "^0.7.0",
+    "eventsauce/rabbitmq-bundle-bindings": "^0.7.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Workshop\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "^8.3"
+  }
+}
