@@ -1,0 +1,74 @@
+## The namespace for your generated code.
+namespace: Workshop\Messages
+
+## Custom type serialization (optional)
+types:
+  accountId:
+    type: Workshop\Banking\Aggregates\AccountId
+    serializer: |
+      {param}->toString()
+    deserializer: |
+      \Workshop\Banking\Aggregates\AccountId::fromString({param})
+
+## The commands (optional)
+commands:
+  OpenAccount:
+    fields:
+      id:
+        type: accountId
+      type:
+        type: string
+      openingBalance:
+        type: int
+  DepositMoney:
+    fields:
+      id:
+        type: accountId
+      amount:
+        type: int
+  WithdrawMoney:
+    fields:
+      id:
+        type: accountId
+      amount:
+        type: int
+  CloseAccount:
+    fields:
+      id:
+        type: accountId
+
+
+## The events
+events:
+  AccountWasOpened:
+    fields:
+      id:
+        type: accountId
+      type:
+        type: string
+      openingBalance:
+        type: int
+  MoneyWasDeposited:
+    fields:
+      id:
+        type: accountId
+      amount:
+        type: int
+  MoneyWasWithdrawn:
+    fields:
+      id:
+        type: accountId
+      amount:
+        type: int
+  WithdrawFailedDueToInsufficientFunds:
+    fields:
+      id:
+        type: accountId
+      amount:
+        type: int
+  FailedToCloseAccountWithFunds:
+    fields:
+      id:
+        type: accountId
+      balance:
+        type: int

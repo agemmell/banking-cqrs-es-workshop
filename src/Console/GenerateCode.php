@@ -24,7 +24,7 @@ class GenerateCode extends Command
             ->setDescription('Generates EventSauce code files from YAML definition file')
             ->setHelp('This command allows you to generate EventSauce code files from a YAML definition file')
             ->addArgument('yaml', InputArgument::REQUIRED, 'YAML definition file to use')
-            ->addArgument('destination', InputArgument::REQUIRED, 'Destination file for the generated code');
+            ->addArgument('destination', InputArgument::REQUIRED, 'Destination path and file name for the generated code');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
