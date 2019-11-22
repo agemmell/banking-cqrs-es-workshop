@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  php:
+    image: agemmell/banking-workshop
+    container_name: workshop-php-box
+    build:
+      context: .docker/php-fpm/.
+    volumes:
+      - ./:/var/www/app

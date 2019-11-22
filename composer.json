@@ -23,8 +23,7 @@
   },
   "require": {
     "eventsauce/eventsauce": "^0.7.0",
-    "eventsauce/doctrine-message-repository": "^0.7.0",
-    "eventsauce/rabbitmq-bundle-bindings": "^0.7.0"
+    "eventsauce/doctrine-message-repository": "^0.7.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
